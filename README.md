@@ -10,6 +10,6 @@
 
 5. Install <a href="https://stedolan.github.io/jq/">jq</a> and extract the URLs of the attachments with the following command. Substitute the correct BACKUP ID.
 
-```jq ".channels.categories | .[] | .children[] | select(.type != \"voice\") | .messages | .[] | .files | .[] | .attachment" < (BACKUP ID).json > urls.txt```
+```jq -r ".channels.categories | .[] | .children[] | select(.type != \"voice\") | .messages | .[] | .files | .[] | .attachment" < (BACKUP ID).json > urls.txt```
 
 6. Download the URLs in `urls.txt`.
