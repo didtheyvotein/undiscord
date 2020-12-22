@@ -12,4 +12,4 @@
 
 ```jq -r ".channels.categories | .[] | .children[] | select(.type != \"voice\") | .messages | .[] | .files | .[] | .attachment" < (BACKUP ID).json > urls.txt```
 
-6. Download the URLs in `urls.txt` with `wget -r -l 1 -i urls.txt`.
+6. Download the URLs in `urls.txt` with `wget -r -l 0 -i urls.txt`.
